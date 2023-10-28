@@ -1,0 +1,31 @@
+K8SC
+
+Step-1: AWS CLI Install
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+Step-2: Install KOPS & KUBCTL
+
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+wget https://github.com/kubernetes/kops/releases/download/v1.24.1/kops-linux-amd64
+
+chmod +x kops-linux-amd64 kubectl
+
+ mv kops-linux-amd64 /usr/local/bin/kops 
+
+mv kubectl /usr/local/bin/kubectl 
+
+vim .bashrc and add this {export PATH=$PATH:/usr/local/bin/
+}
+
+source .bashrc
+
+aws --version 
+
+kubectl version 
+
+kops
